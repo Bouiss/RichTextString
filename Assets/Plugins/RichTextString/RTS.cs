@@ -16,23 +16,7 @@ static class RTS
 
     public static string RTString(string text, Color textColor,bool isBold = false, bool isItalic = false )
     {
-        StringBuilder sb = new StringBuilder();
-        sb.AppendFormat("<color=#{0}>{1}</color>", ColorUtility.ToHtmlStringRGBA(textColor), text);
-        
-        if (isBold)
-        {
-            sb.Insert(0, "<b>");
-            sb.Append("</b>");
-        }
-
-        if (isItalic)
-        {
-            sb.Insert(0, "<i>");
-            sb.Append("</i>");
-        }
-
-
-        return sb.ToString();
+        return RTString(text, ColorUtility.ToHtmlStringRGBA(textColor), isBold, isItalic);
 
     }
     public static string RTString(string text, string hexColorWithSharp, bool isBold = false, bool isItalic = false)
