@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static RTS;
 
 public class ExampleRTS : MonoBehaviour
 {
@@ -11,8 +10,11 @@ public class ExampleRTS : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(RTString("The Sky is Blue !!!! ", Color.blue, true, false));
-            Debug.Log(RTString("The Sky is Blue ! ", Color.blue, true, false)+" "+ RTS.RTString("And Love Is Pink !!!! ", "#E43CFF", false, true));
+            Debug.Log(RTS.String("The Sky is Blue !!!! ", RTS.Color(Color.blue), RTS.Bold()));
+            Debug.Log(string.Format("{0} {1}",
+                RTS.String("The Sky is Blue ! ", RTS.Color(Color.blue), RTS.Bold()),
+                RTS.String("And Love Is Pink !!!! ", RTS.Size(20), RTS.Color("E43CFF"), RTS.Italic())
+                ));
         }
     }
 
